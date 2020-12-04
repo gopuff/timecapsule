@@ -14,7 +14,11 @@
     "sinon-test": "^3.0.0"
   },
   "scripts": {
-    "test": "nyc --reporter=cobertura mocha"
+    "test": "nyc --reporter=cobertura mocha",
+    "lint": "eslint .",
+    "release": "npm run release:create && npm run release:publish",
+    "release:create": "standard-version",
+    "release:publish": "git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",

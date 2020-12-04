@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+      - master
+  tags:
+    include:
+      - 'v*'
+  paths:
+    exclude:
+      - '*.md'
+
+pr:
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+      - '*.md'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - job: BuildAndTest
+    displayName: Build and Test
+    steps:
+      - task: Npm@1
+        displayName: Install Dependencies
+        inputs:
+          command: custom
+          customCommand: ci
+
+      - bash: npm run lint
+        displayName: Lint
+
+      - bash: npm run build
+        displayName: Build
+        failOnStderr: true
+
+      - task: Npm@1
+        displayName: Publish Package
+        condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
+        inputs:
+          command: publish
+          publishRegistry: useFeed
+          publishFeed: gopuff
+          publishPackageMetadata: true
