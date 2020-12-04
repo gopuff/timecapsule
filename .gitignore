@@ -36,3 +36,9 @@ npm-debug.log
 dist
 
 creds
+staging_creds
+staging-creds
+
+# Test reporters
+.nyc_output/
+testResults/
