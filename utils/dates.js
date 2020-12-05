@@ -4,12 +4,14 @@ const isObject = (v) => {
   return typeof v === 'object' && v !== null
 }
 
+const unit = {}
+
 /**
  * Converts any valid Date argument to a Luxon DateTime instance.
  * @param {String|Number|Date|Object} v
  * @returns luxin.DateTime
  */
-const toLuxonDateTime = (v) => {
+unit.toLuxonDateTime = (v) => {
   if (isObject(v) && !v.getTime) {
     if (v.isLuxonDateTime) {
       return v
@@ -24,10 +26,9 @@ const toLuxonDateTime = (v) => {
  * @param {String|Number|Date|Object} v
  * @returns luxin.DateTime
  */
-const toLuxonDateTimeConfig = (v) => {
-  const date = toLuxonDateTime(v)
+unit.toLuxonDateTimeConfig = (v) => {
+  const date = unit.toLuxonDateTime(v)
   const config = date.c
-  console.log(v, date, config)
 
   if (date.zone) {
     config.zone = date.zone.zoneName
@@ -38,15 +39,11 @@ const toLuxonDateTimeConfig = (v) => {
   return config
 }
 
-const convert12HoursTo24Hours = (hour, period) => {
+unit.convert12HoursTo24Hours = (hour, period) => {
   if (period == 'pm' && hour < 12) return hour + 12
   else if (period !== 'pm' && hour == 12) return hour - 12
 
   return hour
 }
 
-module.exports = {
-  toLuxonDateTime,
-  toLuxonDateTimeConfig,
-  convert12HoursTo24Hours,
-}
+module.exports = unit

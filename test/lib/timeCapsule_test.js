@@ -71,11 +71,11 @@ describe('#TimeCapsule', () => {
       assert(timeCapsule instanceof TimeCapsule)
 
       assert.isTrue(timeCapsule._period.isLuxonInterval)
-      assert.equal(timeCapsule._period.s.toISO(), '2021-07-17T04:31:00.000-00:00')
+      assert.equal(timeCapsule._period.s.toISO(), '2021-07-17T04:31:00.000+00:00')
       // This capsule remains open until extremely far in the future once it is opened.
       assert.equal(
         timeCapsule._period.e.toISO(),
-        '+12021-07-17T04:31:00.000-00:00', // 10,000 years in the future
+        '+12021-07-17T04:31:00.000+00:00', // 10,000 years in the future
       )
 
       assert(timeCapsule.canOpen !== undefined)

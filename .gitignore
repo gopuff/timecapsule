@@ -42,3 +42,4 @@ staging-creds
 # Test reporters
 .nyc_output/
 testResults/
+coverage/
