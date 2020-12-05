@@ -3,9 +3,14 @@
 Time box your features using a simple interface resembling a natural time capsule.
 
 ```javascript
+// Current day is December 26, 2020.
+// You're preparing for your New Year day promotion feature.
+
 const timeCapsule = TimeCapsule.create({
+  // January 1, 2021 at 12:00 am
   open: { year: 2021, month: 1, day: 1 },
-  close: { year: 2021, month: 1, day: 2 },
+  // January 2, 2021 at 5:30 am
+  close: { year: 2021, month: 1, day: 2, hour: 5, minute: 30 },
   zone: 'America/New_York',
 })
 
@@ -14,14 +19,10 @@ if (timeCapsule.canOpen) {
   // and before the close date of the time capsule.
   // Do whatever you need to do.
 
-  console.log(timeCapsule.getValue(), '🎉 💃')
+  console.log(timeCapsule.getValue(), '🎉 Happy New Year. Take 20% Off Today Only! 💃')
 } else if (timeCapsule.isTooEarly) {
-  // The current time is before the open date of the time capsule.
-
   console.log(`You can't redeem that New Year promotion, yet ⏳`)
 } else if (timeCapsule.isTooLate) {
-  // The current time is after the close date of the time capsule.
-
   console.log(`That New Year promo has expired 😥`)
 }
 ```
