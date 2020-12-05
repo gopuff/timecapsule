@@ -103,12 +103,10 @@ describe('dateUtils', () => {
   /**
    * Fails locally depending on time zone
    */
-  describe(`#toLuxonDateTimeConfig()`, () => {
+  describe.only(`#toLuxonDateTimeConfig()`, () => {
     it(
       'should return luxon date time config from valid luxon DateTime',
       withStubs(() => {
-        const toLuxonDateTimeSpy = helper.spy(unit, 'toLuxonDateTime')
-
         const fromDate = unit.toLuxonDateTime({
           year: 1993,
           month: 5,
@@ -118,6 +116,7 @@ describe('dateUtils', () => {
           zone: 'America/New_York',
         })
 
+        const toLuxonDateTimeSpy = helper.spy(unit, 'toLuxonDateTime')
         const result = unit.toLuxonDateTimeConfig(fromDate)
 
         assert.isTrue(toLuxonDateTimeSpy.calledOnce)

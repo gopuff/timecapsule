@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="161" lines-covered="30" line-rate="0.1863" branches-valid="110" branches-covered="5" branch-rate="0.0455" timestamp="1607128700175" complexity="0" version="0.1">
+<coverage lines-valid="161" lines-covered="31" line-rate="0.1925" branches-valid="110" branches-covered="9" branch-rate="0.0818" timestamp="1607128933936" complexity="0" version="0.1">
   <sources>
     <source>/Users/lincolndaniel/Documents/src/timecapsule</source>
   </sources>
@@ -284,18 +284,18 @@
         </class>
       </classes>
     </package>
-    <package name="utils" line-rate="0.7391" branch-rate="0.25">
+    <package name="utils" line-rate="0.7826000000000001" branch-rate="0.45">
       <classes>
-        <class name="dates.js" filename="utils/dates.js" line-rate="0.7391" branch-rate="0.25">
+        <class name="dates.js" filename="utils/dates.js" line-rate="0.7826000000000001" branch-rate="0.45">
           <methods>
-            <method name="(anonymous_0)" hits="1" signature="()V">
+            <method name="(anonymous_0)" hits="2" signature="()V">
               <lines>
-                <line number="3" hits="1"/>
+                <line number="3" hits="2"/>
               </lines>
             </method>
-            <method name="(anonymous_1)" hits="1" signature="()V">
+            <method name="(anonymous_1)" hits="2" signature="()V">
               <lines>
-                <line number="14" hits="1"/>
+                <line number="14" hits="2"/>
               </lines>
             </method>
             <method name="(anonymous_2)" hits="1" signature="()V">
@@ -312,21 +312,21 @@
           <lines>
             <line number="1" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
-            <line number="4" hits="1" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="4" hits="2" branch="true" condition-coverage="100% (2/2)"/>
             <line number="7" hits="1" branch="false"/>
             <line number="14" hits="1" branch="false"/>
-            <line number="15" hits="1" branch="true" condition-coverage="50% (2/4)"/>
-            <line number="16" hits="0" branch="true" condition-coverage="0% (0/2)"/>
-            <line number="17" hits="0" branch="false"/>
-            <line number="19" hits="0" branch="false"/>
-            <line number="21" hits="1" branch="false"/>
+            <line number="15" hits="2" branch="true" condition-coverage="75% (3/4)"/>
+            <line number="16" hits="2" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="17" hits="1" branch="false"/>
+            <line number="19" hits="1" branch="false"/>
+            <line number="21" hits="0" branch="false"/>
             <line number="29" hits="1" branch="false"/>
             <line number="30" hits="1" branch="false"/>
             <line number="31" hits="1" branch="false"/>
             <line number="33" hits="1" branch="true" condition-coverage="50% (1/2)"/>
             <line number="34" hits="1" branch="false"/>
             <line number="36" hits="1" branch="true" condition-coverage="50% (1/2)"/>
-            <line number="37" hits="1" branch="false"/>
+            <line number="37" hits="0" branch="false"/>
             <line number="39" hits="1" branch="false"/>
             <line number="42" hits="1" branch="false"/>
             <line number="43" hits="0" branch="true" condition-coverage="0% (0/4)"/>
