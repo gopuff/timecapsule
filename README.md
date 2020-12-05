@@ -61,7 +61,7 @@ console.log(timeCapsule.canOpen)
 // Will always print true
 ```
 
-This simply createa s time capsule with the minimal config of `open` being the current year.If the current day was June 20, 2020, that would look like the following:
+This simply createa s time capsule with the minimal config of `open` with the `year` field being one year before the current year. If the current day was June 20, 2020, that would look like the following:
 
 ```javascript
 const timeCapsule = TimeCapsule.create({ open: { year: 2020 } })
