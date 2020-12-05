@@ -20,7 +20,7 @@ describe('timeCapsule', function () {
 
   describe('#createOpenable()', () => {
     it(
-      'ensures default export has valid #createOpenable() function',
+      'ensures default export has valid #createOpenable() function that returns a currently openable time capsule when called',
       withStubs(() => {
         // Tue Jul 21 2020 17:01:04 GMT-0400 (Eastern Daylight Time)
         const now = 1595462400000
