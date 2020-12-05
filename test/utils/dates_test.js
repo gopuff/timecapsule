@@ -103,7 +103,7 @@ describe('dateUtils', () => {
   /**
    * Fails locally depending on time zone
    */
-  describe.only(`#toLuxonDateTimeConfig()`, () => {
+  describe(`#toLuxonDateTimeConfig()`, () => {
     it(
       'should return luxon date time config from valid luxon DateTime',
       withStubs(() => {
