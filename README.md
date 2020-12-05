@@ -86,7 +86,7 @@ const timeCapsule = createTimeCapsule({
 
 ### Create an openable time capsule (convenience)
 
-As a convenience for those times when you just want to quickly create a time capsule that can be opened now so that you can query it with `#queryAccess()` (discussed below), you can simply call to `#createOpenable()`:
+As a convenience for those times when you just want to quickly create a time capsule that can be opened now so that you can quickly query it with `#queryAccess()` (discussed below), you can simply call to `#createOpenable()`:
 
 ```javascript
 import TimeCapsule from '../lib/timeCapsule'
