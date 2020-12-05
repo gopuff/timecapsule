@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="158" lines-covered="151" line-rate="0.9556999999999999" branches-valid="110" branches-covered="100" branch-rate="0.9091" timestamp="1607126991766" complexity="0" version="0.1">
+<coverage lines-valid="161" lines-covered="155" line-rate="0.9627" branches-valid="110" branches-covered="100" branch-rate="0.9091" timestamp="1607127903968" complexity="0" version="0.1">
   <sources>
     <source>/Users/lincolndaniel/Documents/src/timecapsule</source>
   </sources>
   <packages>
-    <package name="lib" line-rate="0.9484999999999999" branch-rate="0.9">
+    <package name="lib" line-rate="0.9565" branch-rate="0.9">
       <classes>
-        <class name="TimeCapsule.js" filename="lib/TimeCapsule.js" line-rate="0.9549" branch-rate="0.9">
+        <class name="TimeCapsule.js" filename="lib/TimeCapsule.js" line-rate="0.9551999999999999" branch-rate="0.9">
           <methods>
             <method name="(anonymous_0)" hits="444" signature="()V">
               <lines>
@@ -263,21 +263,23 @@
             <line number="419" hits="86" branch="false"/>
             <line number="422" hits="181" branch="false"/>
             <line number="426" hits="1" branch="false"/>
-            <line number="428" hits="1" branch="false"/>
+            <line number="427" hits="1" branch="false"/>
+            <line number="429" hits="1" branch="false"/>
           </lines>
         </class>
-        <class name="index.js" filename="lib/index.js" line-rate="0.6667000000000001" branch-rate="1">
+        <class name="index.js" filename="lib/index.js" line-rate="1" branch-rate="1">
           <methods>
-            <method name="(anonymous_0)" hits="0" signature="()V">
+            <method name="(anonymous_0)" hits="1" signature="()V">
               <lines>
-                <line number="5" hits="0"/>
+                <line number="6" hits="1"/>
               </lines>
             </method>
           </methods>
           <lines>
             <line number="1" hits="1" branch="false"/>
             <line number="3" hits="1" branch="false"/>
-            <line number="5" hits="0" branch="false"/>
+            <line number="4" hits="1" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
           </lines>
         </class>
       </classes>
@@ -303,7 +305,7 @@
             </method>
             <method name="(anonymous_3)" hits="115" signature="()V">
               <lines>
-                <line number="40" hits="115"/>
+                <line number="41" hits="115"/>
               </lines>
             </method>
           </methods>
@@ -320,16 +322,17 @@
             <line number="27" hits="1" branch="false"/>
             <line number="28" hits="399" branch="false"/>
             <line number="29" hits="399" branch="false"/>
-            <line number="31" hits="399" branch="true" condition-coverage="50% (1/2)"/>
-            <line number="32" hits="399" branch="false"/>
-            <line number="34" hits="399" branch="true" condition-coverage="100% (2/2)"/>
-            <line number="35" hits="364" branch="false"/>
-            <line number="37" hits="399" branch="false"/>
-            <line number="40" hits="1" branch="false"/>
-            <line number="41" hits="115" branch="true" condition-coverage="100% (4/4)"/>
-            <line number="42" hits="73" branch="true" condition-coverage="100% (4/4)"/>
-            <line number="44" hits="68" branch="false"/>
-            <line number="47" hits="1" branch="false"/>
+            <line number="30" hits="399" branch="false"/>
+            <line number="32" hits="399" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="33" hits="399" branch="false"/>
+            <line number="35" hits="399" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="36" hits="364" branch="false"/>
+            <line number="38" hits="399" branch="false"/>
+            <line number="41" hits="1" branch="false"/>
+            <line number="42" hits="115" branch="true" condition-coverage="100% (4/4)"/>
+            <line number="43" hits="73" branch="true" condition-coverage="100% (4/4)"/>
+            <line number="45" hits="68" branch="false"/>
+            <line number="48" hits="1" branch="false"/>
           </lines>
         </class>
       </classes>

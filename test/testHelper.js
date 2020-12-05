@@ -47,6 +47,16 @@ class BaseTestHelper {
 
   /**
    * If the current test is being ran with #withStubs(),
+   * this points to the sinon context's #stub() method.
+   */
+  get stub() {
+    return this._stub
+  }
+
+  /**
+
+  /**
+   * If the current test is being ran with #withStubs(),
    * this points to the sinon context's #replaceGetter() method.
    *
    * You can use this to replace a getter on a `class` instance.

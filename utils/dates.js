@@ -27,6 +27,7 @@ const toLuxonDateTime = (v) => {
 const toLuxonDateTimeConfig = (v) => {
   const date = toLuxonDateTime(v)
   const config = date.c
+  console.log(v, date, config)
 
   if (date.zone) {
     config.zone = date.zone.zoneName
