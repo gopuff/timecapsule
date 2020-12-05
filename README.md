@@ -2,6 +2,29 @@
 
 Time box your features using a simple interface resembling a natural time capsule.
 
+```javascript
+const timeCapsule = TimeCapsule.create({
+  open: { year: 2021, month: 1, day: 1 },
+  close: { year: 2021, month: 1, day: 2 },
+  zone: 'America/New_York',
+})
+
+if (timeCapsule.canOpen) {
+  // The current time is after the open date of the time capsule.
+  // Do whatever you need to do.
+
+  console.log(timeCapsule.getValue(), '🎉 💃')
+} else if (timeCapsule.isTooEarly) {
+  // The current time is before the open date of the time capsule.
+
+  console.log(`You can't redeem that New Year promotion, yet ⏳`)
+} else if (timeCapsule.isTooLate) {
+  // The current time is after the close date of the time capsule.
+
+  console.log(`That New Year promo has expired 😥`)
+}
+```
+
 ## Motivations
 
 Many features may have to do with adding a feature at a future date and then removing it at a farther date. Your only current option may be to wait until that date comes, stop what you're doing, and get that time-sensitive (and many times temporary) feature out. Then when a farther date comes, you have to stop what we're doing and remove that feature via another deploy. This is especially bad on the weekends or your vacation time.
@@ -20,7 +43,7 @@ Additionally, you can set the time zone for the time capsule so, regardless of w
 
 We use [Luxon](https://moment.github.io/luxon/), "A powerful, modern, and friendly wrapper for Javascript dates and times", under the hood for immutable time manipulation, so our configuration objects, `open` and `close`, require a form that can be converted to a [`Luxon.DateTime`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html).
 
-So long as your `open` and `close` datetime configurations are valid for  [`Luxon.DateTime.fromObject({...})`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromObject) or [`new Date(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date), they can be used for creating a time capsule.
+So long as your `open` and `close` datetime configurations are valid for [`Luxon.DateTime.fromObject({...})`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromObject) or [`new Date(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date), they can be used for creating a time capsule.
 
 ## How to Use
 
