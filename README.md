@@ -1,6 +1,6 @@
 # TimeCapsule.js
 
-Time box your features using a simple interface resembling a natural time capsule.
+A power time query library for timeboxing your features using a simple interface resembling a natural time capsule.
 
 ```javascript
 // Current day is December 26, 2020.
@@ -26,6 +26,8 @@ if (timeCapsule.canOpen) {
   console.log(`That New Year promo has expired 😥`)
 }
 ```
+
+Read on for more complex and convenient usage.
 
 ## Motivations
 
