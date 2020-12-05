@@ -80,7 +80,7 @@ describe('dateUtils', () => {
         const result = unit.toLuxonDateTime(1585680308918)
 
         assert.isTrue(fromMillisSpy.calledOnce)
-        assert.equal(result.toISO(), '2020-03-31T18:45:08.918-00:00')
+        assert.equal(result.toISO(), '2020-03-31T18:45:08.918+00:00')
       }),
     )
 
