@@ -10,7 +10,8 @@ const timeCapsule = TimeCapsule.create({
 })
 
 if (timeCapsule.canOpen) {
-  // The current time is after the open date of the time capsule.
+  // The current time is after the open date 
+  // and before the close date of the time capsule.
   // Do whatever you need to do.
 
   console.log(timeCapsule.getValue(), '🎉 💃')
@@ -190,6 +191,7 @@ const capsule = createTimeCapsule({
 
 if (capsule.canOpen) {
   // The current time is after the open date of the capsule and before the close date
+  // and before the close date of the time capsule.
   // Do whatever you need to do.
   console.log(capsule.getValue(), '🎉 💃')
 } else {
