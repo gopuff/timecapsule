@@ -1,0 +1,34 @@
+{
+  "name": "timecapsulejs",
+  "version": "1.0.0",
+  "description": "Time box your features using a simple interface resembling a natural time capsule.",
+  "main": "index.js",
+  "dependencies": {
+    "luxon": "^1.25.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.14.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.1",
+    "sinon-test": "^3.0.0"
+  },
+  "scripts": {
+    "test": "nyc --reporter=cobertura mocha",
+    "lint": "eslint .",
+    "release": "npm run release:create && npm run release:publish",
+    "release:create": "standard-version",
+    "release:publish": "git push --follow-tags origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gopuff/timecapsule.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gopuff/timecapsule/issues"
+  },
+  "homepage": "https://github.com/gopuff/timecapsule#readme"
+}
