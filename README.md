@@ -52,12 +52,9 @@ const myFeatureIsEnabled = timeCapsule.canOpen
 ```
 
 ### `.queryAccess(query)`
-For more complex time needs, You can check if you can open a time capsule based on a time-table query using `#queryAccess()`.
+For more complex time needs, You can check if you can open a time capsule based on a [timetable](https://www.merriam-webster.com/dictionary/timetable) query using `#queryAccess()`.
 
-The vast majority of this PR is tests and some formatting. 
-You can review without the formatting changes here: https://github.com/gopuff/mixcart/pull/2846/files?diff=unified&w=1
-
-#### The idea behind the name
+#### The idea behind the name of `#queryAccess()`
 The idea here is that **a capsule can become open at one point in time**, but only **accessible at certain times**.
 
 Think of this in the context of a business. A company becomes registered and open for business on a single, specific day in time, but patrons can only access it on certain days and at certain times based on its timetable (schedule).
