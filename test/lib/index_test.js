@@ -7,11 +7,6 @@ const { assert, withStubs, patchNow } = helper
 describe('timeCapsule', function () {
   this.timeout(10000)
 
-  const TimeZone = Object.freeze({
-    losAngeles: 'America/Los_Angeles',
-    newYork: 'America/New_York',
-  })
-
   before(() => helper.setup())
 
   after(helper.tearDown)
@@ -37,7 +32,7 @@ describe('timeCapsule', function () {
         unit.createOpened()
 
         assert.isTrue(createSpy.calledOnce)
-        assert.deepEqual(createSpy.lastCall.args, [{ open: {year: 2019} }])
+        assert.deepEqual(createSpy.lastCall.args, [{ open: { year: 2019 } }])
       }),
     )
   })
