@@ -50,6 +50,25 @@ const timeCapsule = createTimeCapsule({
 })
 ```
 
+### Create an openable time capsule (convenience)
+
+As a convenience for those times when you just want to quickly create a time capsule that can be opened now so that you can query it with `#queryAccess()` (discussed below), you can simply call to `#createOpenable()`:
+
+```javascript
+import TimeCapsule from '../lib/timeCapsule'
+const timeCapsule = TimeCapsule.createOpenable()
+console.log(timeCapsule.canOpen)
+// Will always print true
+```
+
+This simply createa s time capsule with the minimal config of `open` being the current year.If the current day was June 20, 2020, that would look like the following:
+
+```javascript
+const timeCapsule = TimeCapsule.create({ open: { year: 2020 } })
+console.log(timeCapsule.canOpen)
+// Will always print true
+```
+
 ### `.canOpen`
 
 Once you have a time capsule, you can check if you can open it using `#canOpen`
@@ -82,19 +101,19 @@ import TimeCapsule from '../lib/timeCapsule'
 // Current time is Monday 12:30pm
 
 // returns FALSE   for Breakfast
-TimeCapsule.createOpen().queryAccess({
+TimeCapsule.createOpenable().queryAccess({
   time: { $thru: ['7am', '11:29am'] },
   weekday: { $thru: ['mon', 'friday'] },
 })
 
 // returns FALSE   for Brunch
-TimeCapsule.createOpen().queryAccess({
+TimeCapsule.createOpenable().queryAccess({
   time: { $thru: ['10am', '3:29pm'] },
   weekday: ['saturday', 'sun'],
 })
 
 // returns TRUE   for Lunch
-TimeCapsule.createOpen().queryAccess({
+TimeCapsule.createOpenable().queryAccess({
   time: { $thru: ['11:30am', '3:29pm'] },
   weekday: { $thru: ['monday', 'fri'] },
 })
