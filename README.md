@@ -23,6 +23,11 @@ Additionally, you can set the time zone for the time capsule so, regardless of w
 ```javascript
 import TimeCapsule from '../lib/timeCapsule'
 
+const TimeZone = {
+  losAngeles: 'America/Los_Angeles',
+  newYork: 'America/New_York',
+}
+
 // Current time is 6/20/2020 at 12:30pm
 
 const timeCapsule = createTimeCapsule({
@@ -34,7 +39,7 @@ const timeCapsule = createTimeCapsule({
     hour: 9,
     minute: 30,
   },
-  // EDT (optional: defaults to client's local time zone)
+  // optional: defaults to client's local time zone
   zone: TimeZone.newYork,
   // The end of the day: 11:45pm
   // "close" is optional. It's set to the end of time if not provided
