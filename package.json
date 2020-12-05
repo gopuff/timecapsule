@@ -1,6 +1,6 @@
 {
   "name": "@gopuff/timecapsulejs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Time box your features using a simple interface resembling a natural time capsule.",
   "main": "index.js",
   "repository": {
