@@ -1,14 +1,19 @@
 const helper = require('../testHelper').instance()
 const dates = require('../../utils/dates')
-const { create: createTimeCapsule } = require('../../lib/index')
-const unit = require('../../lib/TimeCapsule')
 
+const unit = require('../../lib/TimeCapsule')
 const { assert, withStubs, patchNow } = helper
 
 describe('#TimeCapsule', () => {
+  const { create: createTimeCapsule } = unit
+
   const TimeZone = Object.freeze({
     losAngeles: 'America/Los_Angeles',
     newYork: 'America/New_York',
+  })
+
+  describe('#supportedQueryTimeParts', () => {
+    assert.deepEqual(unit.supportedQueryTimeParts, ['minute', 'hour'])
   })
 
   describe('#canOpen', () => {
