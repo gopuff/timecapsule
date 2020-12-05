@@ -4,20 +4,14 @@
  * @fileoverview
  */
 
-const util = require('util')
-const path = require('path')
-
 const chai = require('chai')
 const sinon = require('sinon')
 const sinonTest = require('sinon-test')
 
 const assert = chai.assert
-const expect = chai.expect
 
 // For stubbing and spying
 const sinonTestWrapper = sinonTest(sinon)
-
-const PromiseState = { 0: 'pending', 1: 'resolved', 2: 'rejected' }
 
 class BaseTestHelper {
   constructor() {
