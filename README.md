@@ -14,9 +14,13 @@ It works just as you would expect a natural [time capsule](https://en.wikipedia.
 
 The only requirement is an explicit `open` date configuration object; at least a `year` is required in this configuration. A `close` date configuration can also be provided; this must be a date that exclusively follows `open`.
 
-> We use [Luxon](https://moment.github.io/luxon/), "A powerful, modern, and friendly wrapper for Javascript dates and times", under the hood for immutable time manipulation, so our configuration objects, `open` and `close`, require a form that can be converted to a [`Luxon.DateTime`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html).
-
 Additionally, you can set the time zone for the time capsule so, regardless of where a user is, the time capsule's open and close dates are always in relation to your desired time zone. A good example is if you want a feature to only be enabled during the business hours of your headquarters, say Philadelphia; in such case, you can set the time zone to `America/New_York`.
+
+### Date configuration expectations
+
+We use [Luxon](https://moment.github.io/luxon/), "A powerful, modern, and friendly wrapper for Javascript dates and times", under the hood for immutable time manipulation, so our configuration objects, `open` and `close`, require a form that can be converted to a [`Luxon.DateTime`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html).
+
+So long as your `open` and `close` datetime configurations are valid for  [`Luxon.DateTime.fromObject({...})`](https://moment.github.io/luxon/docs/class/src/datetime.js~DateTime.html#static-method-fromObject) or [`new Date(...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date), they can be used for creating a time capsule.
 
 ## How to Use
 
