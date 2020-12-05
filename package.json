@@ -1,6 +1,6 @@
 {
   "name": "@gopuff/timecapsulejs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A power time query library for timeboxing your features using a simple interface resembling a natural time capsule.",
   "main": "index.js",
   "repository": {
