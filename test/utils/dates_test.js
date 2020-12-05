@@ -65,7 +65,7 @@ describe('dateUtils', () => {
         const result = unit.toLuxonDateTime(new Date('May 26 1993'))
 
         assert.isTrue(fromMillisSpy.calledOnce)
-        assert.equal(result.toISO(), '1993-05-26T00:00:00.000-00:00')
+        assert.equal(result.toISO(), '1993-05-26T00:00:00.000+00:00')
       }),
     )
 
@@ -93,7 +93,7 @@ describe('dateUtils', () => {
         const fromMillisSpy = helper.spy(DateTime, 'fromMillis')
 
         const result = unit.toLuxonDateTime('Tue Mar 31 2020 14:45:08')
-        assert.equal(result.toISO(), '2020-03-31T14:45:08.000-00:00')
+        assert.equal(result.toISO(), '2020-03-31T14:45:08.000+00:00')
 
         assert.isTrue(fromMillisSpy.calledOnce)
       }),
