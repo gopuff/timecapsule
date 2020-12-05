@@ -1,6 +1,6 @@
 {
   "name": "timecapsulejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Time box your features using a simple interface resembling a natural time capsule.",
   "main": "index.js",
   "dependencies": {
