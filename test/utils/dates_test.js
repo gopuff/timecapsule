@@ -48,9 +48,9 @@ describe('dateUtils', () => {
           minute: 31,
           zone: 'America/New_York',
         })
-        assert.equal(result.toISO(), '1993-05-26T04:31:00.000-04:00')
 
         assert.isTrue(fromObjectSpy.calledOnce)
+        assert.equal(result.toISO(), '1993-05-26T04:31:00.000-04:00')
       }),
     )
 
@@ -63,9 +63,9 @@ describe('dateUtils', () => {
         const fromMillisSpy = helper.spy(DateTime, 'fromMillis')
 
         const result = unit.toLuxonDateTime(new Date('May 26 1993'))
-        assert.equal(result.toISO(), '1993-05-26T00:00:00.000-00:00')
 
         assert.isTrue(fromMillisSpy.calledOnce)
+        assert.equal(result.toISO(), '1993-05-26T00:00:00.000-00:00')
       }),
     )
 
@@ -78,9 +78,9 @@ describe('dateUtils', () => {
         const fromMillisSpy = helper.spy(DateTime, 'fromMillis')
 
         const result = unit.toLuxonDateTime(1585680308918)
-        assert.equal(result.toISO(), '2020-03-31T18:45:08.918-00:00')
 
         assert.isTrue(fromMillisSpy.calledOnce)
+        assert.equal(result.toISO(), '2020-03-31T18:45:08.918-00:00')
       }),
     )
 
@@ -119,6 +119,8 @@ describe('dateUtils', () => {
         })
 
         const result = unit.toLuxonDateTimeConfig(fromDate)
+
+        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
         assert.deepEqual(result, {
           year: 1993,
           month: 5,
@@ -129,8 +131,6 @@ describe('dateUtils', () => {
           second: 0,
           zone: 'America/New_York',
         })
-
-        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
       }),
     )
 
@@ -143,6 +143,8 @@ describe('dateUtils', () => {
         const fromDate = new Date('1993-05-26T04:31:02.054-04:00')
 
         const result = unit.toLuxonDateTimeConfig(fromDate)
+
+        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
         assert.deepEqual(result, {
           year: 1993,
           month: 5,
@@ -152,8 +154,6 @@ describe('dateUtils', () => {
           millisecond: 54,
           second: 2,
         })
-
-        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
       }),
     )
 
@@ -164,6 +164,8 @@ describe('dateUtils', () => {
 
         // 06/15/20 at 4:31am in Philly, PA
         const result = unit.toLuxonDateTimeConfig(738405062054)
+
+        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
         assert.deepEqual(result, {
           year: 1993,
           month: 5,
@@ -173,8 +175,6 @@ describe('dateUtils', () => {
           millisecond: 54,
           second: 2,
         })
-
-        assert.isTrue(toLuxonDateTimeSpy.calledOnce)
       }),
     )
   })
