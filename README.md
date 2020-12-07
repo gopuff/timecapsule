@@ -1,7 +1,8 @@
 # TimeCapsule.js
 
-A power time query library for timeboxing your features using a simple interface resembling a natural time capsule.
+A powerful time query library for timeboxing your features using a simple interface resembling a natural time capsule.
 
+### Simple Interface:
 ```javascript
 // Current day is December 26, 2020.
 // You're preparing for your New Year day promotion feature.
@@ -12,6 +13,7 @@ const timeCapsule = TimeCapsule.create({
   // January 2, 2021 at 5:30 am
   close: { year: 2021, month: 1, day: 2, hour: 5, minute: 30 },
   zone: 'America/New_York',
+  value: '20% Off'
 })
 
 if (timeCapsule.canOpen) {
@@ -19,11 +21,38 @@ if (timeCapsule.canOpen) {
   // and before the close date of the time capsule.
   // Do whatever you need to do.
 
-  console.log(timeCapsule.getValue(), '🎉 Happy New Year. Take 20% Off Today Only! 💃')
+  console.log(`🎉 Happy New Year. Take ${timeCapsule.getValue()} Today Only! 💃`)
 } else if (timeCapsule.isTooEarly) {
   console.log(`You can't redeem that New Year promotion, yet ⏳`)
 } else if (timeCapsule.isTooLate) {
   console.log(`That New Year promo has expired 😥`)
+}
+```
+
+### Easily work with [timetables](https://www.merriam-webster.com/dictionary/timetable):
+
+```javascript
+// Current time is Monday 12:30pm
+
+const isLunchTime = TimeCapsule.createOpenable().queryAccess({
+  time: { $thru: ['11:30am', '3:29pm'] },
+  weekday: { $thru: ['monday', 'fri'] },
+})
+
+if (isLunchTime) {
+  console.log(`Come grab lunch!`)
+}
+```
+
+```javascript
+// Current day is Tuesday
+
+const isMeetingLessWorkday = TimeCapsule.createOpenable().queryAccess({
+  weekday: ['tue', 'thu']
+})
+
+if (isMeetingLessWorkday) {
+  console.log(`No meetings today! Enjoy your heads down time.`)
 }
 ```
 
@@ -138,20 +167,22 @@ import TimeCapsule from '../lib/timeCapsule'
 
 // Current time is Monday 12:30pm
 
+const timeCapsule = TimeCapsule.createOpenable()
+
 // returns FALSE   for Breakfast
-TimeCapsule.createOpenable().queryAccess({
+timeCapsule.queryAccess({
   time: { $thru: ['7am', '11:29am'] },
   weekday: { $thru: ['mon', 'friday'] },
 })
 
 // returns FALSE   for Brunch
-TimeCapsule.createOpenable().queryAccess({
+timeCapsule.queryAccess({
   time: { $thru: ['10am', '3:29pm'] },
   weekday: ['saturday', 'sun'],
 })
 
 // returns TRUE   for Lunch
-TimeCapsule.createOpenable().queryAccess({
+timeCapsule.queryAccess({
   time: { $thru: ['11:30am', '3:29pm'] },
   weekday: { $thru: ['monday', 'fri'] },
 })
