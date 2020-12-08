@@ -47,7 +47,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
           scope: '@gopuff'
       # Publish to GitHub Packages
       - run: npm publish
