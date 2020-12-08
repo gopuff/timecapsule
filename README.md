@@ -1,6 +1,10 @@
 # TimeCapsule.js
 
-A powerful time query library for timeboxing your features using a simple interface resembling a natural time capsule.
+A powerful time query library for timeboxing your features using a simple interface resembling a natural time capsule. Working with time and time zones has never been easier.
+
+```
+npm install -s @gopuff/timecapsulejs
+```
 
 ### Simple Interface:
 ```javascript
