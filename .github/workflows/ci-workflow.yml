@@ -53,7 +53,7 @@ jobs:
       # and Publish to GitHub Package Registry
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
           scope: '<@OWNER>'
       - name: Publish to GitHub Package Registry
