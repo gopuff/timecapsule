@@ -13,9 +13,6 @@
     "url": "https://github.com/gopuff/timecapsule/issues"
   },
   "homepage": "https://github.com/gopuff/timecapsule#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/gopuff/"
-  },
   "scripts": {
     "test": "nyc --reporter=cobertura mocha",
     "lint": "eslint .",
