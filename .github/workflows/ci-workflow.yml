@@ -55,7 +55,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
-          scope: '<@OWNER>'
+          scope: '@gopuff'
       - name: Publish to GitHub Package Registry
         run: npm publish
         env:
