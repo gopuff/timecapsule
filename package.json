@@ -2,7 +2,7 @@
   "name": "@gopuff/timecapsulejs",
   "version": "1.1.3",
   "description": "A powerful time query library for timeboxing your features using a simple interface resembling a natural time capsule. Working with time and time zones has never been easier.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gopuff/timecapsule.git"
@@ -16,6 +16,7 @@
   "scripts": {
     "test": "nyc --reporter=cobertura mocha",
     "lint": "eslint .",
+    "build": "npx parcel build lib/index.js",
     "release": "npm run release:create && npm run release:publish",
     "release:create": "standard-version",
     "release:publish": "git push --follow-tags origin master"
@@ -24,10 +25,13 @@
     "luxon": "^1.25.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "chai": "^4.2.0",
     "eslint": "^7.14.0",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
+    "parcel-bundler": "^1.12.4",
     "sinon": "^9.2.1",
     "sinon-test": "^3.0.0"
   }
