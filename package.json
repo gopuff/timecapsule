@@ -22,7 +22,7 @@
     "release:publish": "git push --follow-tags origin master"
   },
   "dependencies": {
-    "luxon": "^1.25.0"
+    "luxon": "^2.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
